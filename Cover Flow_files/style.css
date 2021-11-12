@@ -48,8 +48,12 @@ body {
 /*custom settings example for elements */
 .testimonials label[for="t-4"] img {
 	width: 250px;
-	/*border-radius: 50%;
-	border: 13px solid #3B344D;*/
+	border: 1px solid #3B344D
+}
+
+/*custom settings example for elements */
+.testimonials label[for="t-5"] img {
+	width: 250px;
 	border: 1px solid #3B344D
 }
 
