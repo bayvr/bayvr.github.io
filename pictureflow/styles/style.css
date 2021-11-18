@@ -26,9 +26,9 @@ body {
 	top: 0;
 	position: absolute;
 	box-sizing: border-box;
-	background-color: #0A0220;
+	background-color: rgba(10, 2, 32,0.7);
 	padding: 30px;
-	width: 350px;
+	width: 300px;
 	height: 350px;
 	text-align: center;
 	transition: transform 0.4s;
@@ -39,23 +39,29 @@ body {
 	border: 1px solid #fff
 }
 .testimonials .item img {
-	width: 150px;
+	width: 190px; 
 	/*border-radius: 50%;
 	border: 13px solid #3B344D;*/
 	border: 1px solid #3B344D
 }
 
 /*custom settings example for elements */
-.testimonials label[for="t-4"] img {
-	width: 250px;
+.testimonials label[for="t-3"] img {
+	width: 180px;
 	border: 1px solid #3B344D
 }
 
 /*custom settings example for elements */
-.testimonials label[for="t-5"] img {
-	width: 250px;
+.testimonials label[for="t-4"] img {
+	width: 170px;
 	border: 1px solid #3B344D
 }
+
+/*custom settings example for elements */
+/*.testimonials label[for="t-5"] img {
+	width: 250px;
+	border: 1px solid #3B344D
+}*/
 
 /* color of upper text */
 .testimonials .item p {
