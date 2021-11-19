@@ -9,7 +9,7 @@ AFRAME.registerComponent('markers_start',{
 		
 		var markerEl = document.createElement('a-marker');
 		markerEl.setAttribute('type','pattern');
-		markerEl.setAttribute('url','resources/markers/pattern-csonk.patt');
+		markerEl.setAttribute('url','/resources/converted_markers/pattern-csonk.patt');
 		markerEl.setAttribute('id','marker_001');
 
 		markerEl.setAttribute('registerevents','');
@@ -17,8 +17,8 @@ AFRAME.registerComponent('markers_start',{
 		sceneEl.appendChild(markerEl);
 
 		var obj = document.createElement('a-obj-model');
-			obj.setAttribute('src', 'models/csonk.obj');
-			obj.setAttribute('mtl', 'models/csonk.mtl');
+			obj.setAttribute('src', '/resources/models/csonk.obj');
+			obj.setAttribute('mtl', '/resources/models/csonk.mtl');
 			obj.setAttribute('scale', '0.1 0.1 0.1');
 			obj.setAttribute('position', '0 0 0.5');
 			obj.setAttribute('rotation', '-90 0 0');
@@ -26,7 +26,7 @@ AFRAME.registerComponent('markers_start',{
 
 		var markerEl = document.createElement('a-marker');
 		markerEl.setAttribute('type','pattern');
-		markerEl.setAttribute('url','resources/markers/pattern-statue.patt');
+		markerEl.setAttribute('url','/resources/converted_markers/pattern-statue.patt');
 		markerEl.setAttribute('id','marker_002');
 
 		markerEl.setAttribute('registerevents','');
@@ -34,8 +34,8 @@ AFRAME.registerComponent('markers_start',{
 		sceneEl.appendChild(markerEl);
 
 		var obj = document.createElement('a-obj-model');
-			obj.setAttribute('src', 'models/szobor.obj');
-			obj.setAttribute('mtl', 'models/szobor.mtl');
+			obj.setAttribute('src', '/resources/models/statue.obj');
+			obj.setAttribute('mtl', '/resources/models/statue.mtl');
 			obj.setAttribute('scale', '0.1 0.1 0.1');
 			obj.setAttribute('position', '0.8 0 0.7');
 			obj.setAttribute('rotation', '-90 0 0');
@@ -43,7 +43,7 @@ AFRAME.registerComponent('markers_start',{
 
 		var markerEl = document.createElement('a-marker');
 		markerEl.setAttribute('type','pattern');
-		markerEl.setAttribute('url','resources/markers/pattern-car.patt');
+		markerEl.setAttribute('url','/resources/converted_markers/pattern-car.patt');
 		markerEl.setAttribute('id','marker_003');
 
 		markerEl.setAttribute('registerevents','');
@@ -51,8 +51,8 @@ AFRAME.registerComponent('markers_start',{
 		sceneEl.appendChild(markerEl);
 
 		var obj = document.createElement('a-obj-model');
-			obj.setAttribute('src', 'models/car.obj');
-			obj.setAttribute('mtl', 'models/car.mtl');
+			obj.setAttribute('src', '/resources/models/car.obj');
+			obj.setAttribute('mtl', '/resources/models/car.mtl');
 			obj.setAttribute('scale', '0.1 0.1 0.1');
 			obj.setAttribute('position', '0 0 0.5');
 			obj.setAttribute('rotation', '-90 0 0');
