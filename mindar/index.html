@@ -5,9 +5,17 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+
+    <script src="scripts/videohandler.js"></script>
   </head>
   <body>
-    <a-scene mindar-image="imageTargetSrc: ./targets.mind" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <!--renderer="colorManagement: true, physicallyCorrectLights: true,"-->
+    <a-scene  mindar-image="imageTargetSrc: ./targets.mind"
+              color-space="sRGB"
+              vr-mode-ui="enabled: false"
+              renderer = "gammaOutput: true"
+              device-orientation-permission-ui="enabled: false"
+              light="defaultLightsEnabled: true">
       <a-assets>
     <!--img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/card.png" /-->
     <!--a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item-->
@@ -20,18 +28,29 @@
     <a-asset-item id="csonkObj" src="/resources/models/csonk.obj"></a-asset-item>
     <a-asset-item id="csonkMtl" src="/resources/models/csonk.mtl"></a-asset-item>
 
-    <!--a-asset-item id="stellVid" src="resources/Holo.mp4"></a-asset-item-->
-    <video id="stellVid" autoplay loop="true" src="/resources/videos/Holo.mp4" response-type="arraybuffer" crossorigin webkit-playsinline muted playsinline> </video>
+    <a-asset-item id="car2Obj" src="/resources/models/traxxas_new.obj"></a-asset-item>
+    <a-asset-item id="car2Mtl" src="/resources/models/traxxas_new.mtl"></a-asset-item>
+
+    <!--a-asset-item id="rac" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item-->
+
+    <!--a-asset-item id="stellVid" src="resources/videos/Holo.mp4"></a-asset-item-->
+    <video
+      id="stellVid"
+      src="/resources/videos/Holo.mp4"
+      preload="auto"
+      loop  
+      response-type="arraybuffer"
+      crossorigin
+      webkit-playsinline
+      playsinline
+      muted> </video>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
-        <!--a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane-->
-        <!--a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel"
-          animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
-        -->
-        <a-obj-model rotation="0 0 0" position="0 0 0.1" scale="0.05 0.05 0.05" src="#carObj" mtl="#carMtl">        
+        <a-obj-model rotation="0 0 0" position="0 0 0.1" scale="0.05 0.05 0.05" src="#carObj" mtl="#carMtl">
+        <!--a-obj-model rotation="0 0 0" position="0 0 0.1" scale="0.05 0.05 0.05" src="#car2Obj" mtl="#car2Mtl"></a-obj-model-->
       </a-entity>     
 
       <a-entity mindar-image-target="targetIndex: 1">
@@ -42,10 +61,21 @@
         <a-obj-model rotation="0 0 0" position="0 0 0.1" scale="0.05 0.05 0.05" src="#csonkObj" mtl="#csonkMtl">
       </a-entity>
 
-      <a-entity mindar-image-target="targetIndex: 3">
-        <a-video src="#stellVid">
+      <a-entity mindar-image-target="targetIndex: 3" videohandler>
+        <a-video src="#stellVid" width ="1.777" height ="1">
       </a-entity>
 
+      <!--a-entity mindar-image-target="targetIndex: 4"-->
+        <!--a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane-->
+        <!--a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel"
+          animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+        -->
+        <!--a-gltf-model rotation="0 0 0" position="0 0 0.1" scale="0.005 0.005 0.005" src="#rac"-->
+      <!--/a-entity-->
+
+      <!--a-light type="ambient" color="#FFFFFF"></a-light-->
+      <!--a-entity light="type: ambient; color: #ffffff; intensity: 1.0" ></a-entity-->
+      <!--a-entity light="type: directional; color: #FFFFFF; intensity: 1.0" position="0 0 1"></a-entity-->
     </a-scene>
   </body>
 </html>
