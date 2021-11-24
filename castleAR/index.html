@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+
+    <script src="scripts/videohandler.js"></script>
+  </head>
+  <body>
+    <!--renderer="colorManagement: true, physicallyCorrectLights: true,"-->
+    <a-scene  mindar-image="imageTargetSrc: ./castle.mind"
+              color-space="sRGB"
+              vr-mode-ui="enabled: false"
+              renderer = "colorManagement: true"
+              device-orientation-permission-ui="enabled: false"
+              light="defaultLightsEnabled: true">
+      <a-assets>
+    
+    <!--a-asset-item id="castle1Obj" src="/resources/models/castle/Castle/darkcastle.obj"></a-asset-item>
+    <a-asset-item id="castle1Mtl" src="/resources/models/castle/Castle/darkcastle2.mtl"></a-asset-item-->
+
+    <a-asset-item id="baObj" src="/resources/models/castle/Ba/ba.obj"></a-asset-item>
+    <a-asset-item id="baMtl" src="/resources/models/castle/Ba/ba.mtl"></a-asset-item>
+
+    <a-asset-item id="castleObj" src="/resources/models/castle/Castle2/castle5.obj"></a-asset-item>
+    <a-asset-item id="castleMtl" src="/resources/models/castle/Castle2/castle5.mtl"></a-asset-item>
+
+    <video
+      id="virtualGallery"
+      src="/resources/videos/castle/virtual_gallery.mp4"
+      preload="auto"
+      loop  
+      response-type="arraybuffer"
+      crossorigin
+      webkit-playsinline
+      playsinline
+      muted> </video>
+
+      <video
+      id="utonVideo"
+      src="/resources/videos/castle/uton_video.mp4"
+      preload="auto"
+      loop  
+      response-type="arraybuffer"
+      crossorigin
+      webkit-playsinline
+      playsinline
+      muted> </video>
+
+      <video
+      id="museumVideo"
+      src="/resources/videos/castle/museum_video.mp4"
+      preload="auto"
+      loop  
+      response-type="arraybuffer"
+      crossorigin
+      webkit-playsinline
+      playsinline
+      muted> </video>
+
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0" videohandler>
+        <a-video src="#museumVideo" width ="0.45" height ="1">
+      </a-entity>     
+
+      <a-entity mindar-image-target="targetIndex: 1" videohandler>
+        <a-video src="#utonVideo" width ="0.466" height ="1">
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 2">
+        <!--a-obj-model rotation="0 0 0" position="0 -0.8 0.2" scale="0.1 0.1 0.1" src="#imhotepObj" mtl="#imhotepMtl"-->
+        <a-obj-model rotation="0 0 0" position="0 -0.35 0" scale="0.075 0.075 0.075" src="#baObj" mtl="#baMtl">
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 3">
+        <!--a-obj-model rotation="0 90 0" position="0 0 0" scale="0.0025 0.0025 0.0025" src="#castle1Obj" mtl="#castle1Mtl"-->
+        <a-obj-model rotation="0 90 0" position="0 -0.35 0" scale="0.03 0.03 0.03" src="#castleObj" mtl="#castleMtl"></a-obj-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 4" videohandler>
+        <a-video src="#virtualGallery" width ="1" height ="0.565291">
+      </a-entity>
+
+      <!--a-entity mindar-image-target="targetIndex: 4"-->
+        <!--a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane-->
+        <!--a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel"
+          animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+        -->
+        <!--a-gltf-model rotation="0 0 0" position="0 0 0.1" scale="0.005 0.005 0.005" src="#rac"-->
+      <!--/a-entity-->
+
+      <!--a-light type="ambient" color="#FFFFFF"></a-light-->
+      <!--a-entity light="type: ambient; color: #ffffff; intensity: 1.0" ></a-entity-->
+      <!--a-entity light="type: directional; color: #FFFFFF; intensity: 1.0" position="0 0 1"></a-entity-->
+    </a-scene>
+  </body>
+</html>
